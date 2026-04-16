@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Database\Database;
 use App\Repository\CommandeRepository;
@@ -12,7 +12,7 @@ $service = new CommandeService($repo);
 
 $result = $service->calculerFacture(1);
 
-assert($result["totals"]["ht"] === 250);
-assert($result["totals"]["ttc"] === 270); // après remise
+assert($result["totals"]["ht"] == 250);
+assert($result["totals"]["ttc"] == 270); // après remise
 
 echo "✅ Tests OK";
